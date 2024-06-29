@@ -4,7 +4,7 @@ Shader "Unlit/Mosaic"
 	{
 		_MainTex("Texture", 2D) = "white" {}
 		[IntRange]_Resolution("Resolution",Range(8,2048)) = 64
-			[Toggle] _UseMosaic("Mosaic", Float) = 1
+		[Toggle] _UseMosaic("Mosaic", Float) = 1
 	}
 		SubShader
 		{
@@ -51,8 +51,8 @@ Shader "Unlit/Mosaic"
 					}
 					half4 col = tex2D(_MainTex, vUV);
 				 return col;
-			 }
+				 }
 					 ENDHLSL
-		 }
+			 }
 		}
 }
