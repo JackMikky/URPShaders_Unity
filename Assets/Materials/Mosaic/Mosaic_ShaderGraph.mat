@@ -43,6 +43,6 @@ Material:
     m_Ints: []
     m_Floats:
     - _Mosaic: 1
-    - _Resolution: 128
+    - _Resolution: 86
     m_Colors: []
   m_BuildTextureStacks: []
