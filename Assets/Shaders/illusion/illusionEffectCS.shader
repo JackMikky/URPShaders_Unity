@@ -5,8 +5,10 @@ Shader "Unlit/illusionEffectCS"
 		[HideInInspector]_MainTex("Texture", 2D) = "white" {}
         _Speed("Move Speed",Range(0.1,10))=1
         _Distance("illusion Move Distance",Range(0,1))=0.1
+		[Header(Lens Option)]
         [Toggle]_UseFish_Eye_Lens("Fish-eye lens",FLOAT)=1
         _Scale("Lens Scale",Vector)=(1,1,0,0)
+		_LensDistance("Lens Distance",float)=0.58
 	}
 		SubShader
 		{
@@ -38,6 +40,7 @@ Shader "Unlit/illusionEffectCS"
 
                  float _Speed;
                  float2 _Scale;
+				 float _LensDistance;
                  float _Distance;
                  float _UseFish_Eye_Lens;
 
@@ -57,9 +60,9 @@ Shader "Unlit/illusionEffectCS"
 					float2 uv=i.uv;
 					if (_UseFish_Eye_Lens) {
 						coords *= _Scale;
-						coords -= float2(0.25, 0.25);
-						coords /= 2.0 * (0.58 - distance(coords, float2(0.0, 0.0)));
-						uv = coords + float2(0.5, 0.5);
+						coords -= float2(_Scale.x*0.5, _Scale.y * 0.5);
+						coords /= 2.0 * (_LensDistance - distance(coords, float2(0.0, 0.0)));
+						uv = coords + float2(0.5,0.5);
 					}
                      
                     float _Constant_TAU = 6.28318530;

@@ -31,6 +31,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Distance: 0.04
+    - _LensDistance: 0.58
     - _Speed: 3
     - _UseFish_Eye_Lens: 1
     m_Colors:
