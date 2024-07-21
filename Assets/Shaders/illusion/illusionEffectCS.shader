@@ -54,10 +54,13 @@ Shader "Unlit/illusionEffectCS"
                     
                     half4 col =float4(0,0,0,0);
                     float2 coords =i.uv;
-                    coords *=_Scale;
-                    coords -= float2(0.25, 0.25);
-                    coords /= 2.0 * (0.58 - distance(coords, float2(0.0, 0.0)));
-                    float2 uv= coords + float2(0.5, 0.5);
+					float2 uv=i.uv;
+					if (_UseFish_Eye_Lens) {
+						coords *= _Scale;
+						coords -= float2(0.25, 0.25);
+						coords /= 2.0 * (0.58 - distance(coords, float2(0.0, 0.0)));
+						uv = coords + float2(0.5, 0.5);
+					}
                      
                     float _Constant_TAU = 6.28318530;
 
