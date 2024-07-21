@@ -683,6 +683,89 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &705680808
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 705680803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fb01cd13d74457469e86bd5c701dd2b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  useFreeCamera: 0
+  speed: 2
+  boostSpeed: 15
+  scrollSensity: 0.5
+  X_RotateSensity: 2
+  Y_RotateSensity: 2
+--- !u!1 &992426487
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 992426488}
+  - component: {fileID: 992426489}
+  m_Layer: 0
+  m_Name: NoiseGenerater
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 2147483647
+  m_IsActive: 1
+--- !u!4 &992426488
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992426487}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1561481566}
+  - {fileID: 1957213102}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &992426489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 992426487}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab26e4f5cd0e8da499b95e3ac945a600, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  material: {fileID: 2100000, guid: 711b7d42a7ed325429f7d0f3bc21f20b, type: 2}
+  Noises:
+  - {fileID: 1561481565}
+  - {fileID: 1957213101}
+  NoisePropsList:
+  - _material: {fileID: 0}
+    NoiseName: Glass
+    minTime: 0
+    maxTime: 0.15
+    ShaderPropertyReference: _UseGlassNoise
+    Probability: 25
+    intervalTime: 8
+  - _material: {fileID: 0}
+    NoiseName: LineNoise
+    minTime: 0
+    maxTime: 0.5
+    ShaderPropertyReference: _UseLineNoise
+    Probability: 20
+    intervalTime: 3
 --- !u!1 &1112819356
 GameObject:
   m_ObjectHideFlags: 0
