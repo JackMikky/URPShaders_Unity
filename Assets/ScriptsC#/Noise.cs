@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static NoiseGenerater;
+using static NoiseGenerator;
 
 public class Noise : MonoBehaviour
 {
