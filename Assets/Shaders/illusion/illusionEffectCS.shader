@@ -74,13 +74,14 @@ Shader "Unlit/illusionEffectCS"
 
                     float2 uvR=uv;
                     float2 uvG=uv;
+					float2 uvB = uv;
 					col= tex2D(_MainTex,uv);
                     TilingAndOffset(uv,float2(1,1),float2(offset,offset),uvR);
                     TilingAndOffset(uv,float2(1,1),float2(0,offset),uvG);
 
                      col.r = tex2D(_MainTex,uvR).r;
                      col.g = tex2D(_MainTex,uvG).g;
-                     col.b = tex2D(_MainTex,uv).b;
+                     col.b = tex2D(_MainTex,uvB).b;
 
 				 return col;
 				 }
