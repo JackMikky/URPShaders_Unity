@@ -713,7 +713,7 @@ GameObject:
   - component: {fileID: 992426488}
   - component: {fileID: 992426489}
   m_Layer: 0
-  m_Name: NoiseGenerater
+  m_Name: NoiseGenerator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -753,15 +753,13 @@ MonoBehaviour:
   - {fileID: 1561481565}
   - {fileID: 1957213101}
   NoisePropsList:
-  - _material: {fileID: 0}
-    NoiseName: Glass
+  - NoiseName: Glass
     minTime: 0
     maxTime: 0.15
     ShaderPropertyReference: _UseGlassNoise
     Probability: 25
     intervalTime: 8
-  - _material: {fileID: 0}
-    NoiseName: LineNoise
+  - NoiseName: LineNoise
     minTime: 0
     maxTime: 0.5
     ShaderPropertyReference: _UseLineNoise
