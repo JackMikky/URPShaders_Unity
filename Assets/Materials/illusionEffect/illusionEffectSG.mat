@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: illusionEffectSG
+  m_Shader: {fileID: -6465566751694194690, guid: c22dbfec22c105647811ed166d5bc2d9,
+    type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _LineNoise:
+        m_Texture: {fileID: 2800000, guid: dec378641383bc2499053b8607ba8fec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _SampleTexture2D_29b91fd214664d75ae6cf122c7c99922_Texture_1_Texture2D:
+        m_Texture: {fileID: 2800000, guid: dec378641383bc2499053b8607ba8fec, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_Lightmaps:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_LightmapsInd:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - unity_ShadowMasks:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _BlueMoveIntensity: 5.27
+    - _BlueShockPosibility: 95
+    - _BlueShockProbability: 1
+    - _Distance: 5
+    - _ErroEffect: 0
+    - _Float: 0.5
+    - _Float_1: 2
+    - _GlassEnablePosibility: 5
+    - _GlassEnableProbability: 100
+    - _GreenMoveIntensity: 5.3
+    - _GreenShockPosibility: 95
+    - _GreenShockProbability: 1
+    - _LineNoisePosibility: 5
+    - _LineNoiseProbability: 100
+    - _Rate: 0.01
+    - _RedColorMoveIntensity: 1.86
+    - _RedMoveIntensity: 1.75
+    - _RedShockPosibility: 95
+    - _RedShockProbability: 1
+    - _ShockPosibility: 100
+    - _UseGlassNoise: 0
+    - _UseLens: 1
+    - _UseLineNoise: 0
+    m_Colors:
+    - _BlueMoveDirection: {r: -0.58, g: 0.52, b: 0, a: 0}
+    - _GreenMoveDirection: {r: 0, g: -1.5, b: 0, a: 0}
+    - _Intensity: {r: 0.5, g: 5.5, b: 0, a: 0}
+    - _LensOffset: {r: 0.5, g: 0.5, b: 0, a: 0}
+    - _Rate: {r: 0, g: 0.05, b: 0, a: 0}
+    - _RedMoveDirection: {r: 0.5, g: -0.5, b: 0, a: 0}
+    - _Scale: {r: 2, g: 2, b: 0, a: 0}
+    - _ShrinkDirection: {r: 1, g: 1, b: 0, a: 0}
+    - _StretchDirection: {r: 1, g: 5, b: 0, a: 0}
+    - _Vector2: {r: 0.5, g: 0.5, b: 0, a: 0}
+  m_BuildTextureStacks: []
