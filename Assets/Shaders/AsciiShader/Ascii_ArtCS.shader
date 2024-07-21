@@ -16,6 +16,7 @@ Shader "Unlit/Ascii ArtCS"
 
 		HLSLINCLUDE
 		#include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+		#include "Assets/ShaderFunctionScripts/ShaderUtility.hlsl"
 
 			struct appdata
 		{
@@ -41,26 +42,6 @@ Shader "Unlit/Ascii ArtCS"
 		float _GrayR;
 		float _GrayG;
 		float _GrayB;
-
-		float character(int n, float2 p)
-		{
-			p = floor(p * float2(-4.0, 4.0) + 2.5);
-			if (clamp(p.x, 0.0, 4.0) == p.x && clamp(p.y, 0.0, 4.0) == p.y)
-			{
-				int a = int(round(p.x) + 5.0 * round(p.y));
-				if (((n >> a) & 1) == 1)
-				{
-				if(_SecondaryEffect)
-				 return 0.0;
-				 else 
-				 return 1.0;
-				};
-			}
-				if(_SecondaryEffect)
-				 return 1.0;
-				 else 
-				 return 0.0;
-		}
 
 		v2f vert(appdata v)
 		{
@@ -136,7 +117,7 @@ Shader "Unlit/Ascii ArtCS"
 				if (gray > 0.9767) n = 11512810;
 			}
 				float2 p = fmod(uv / 4, 2) - 1;
-				float char = character(n, p);
+				float char = character(n, p, _SecondaryEffect);
 				col *= char;
 
 				float4 src = tex2D(_MainTex, i.uv);
