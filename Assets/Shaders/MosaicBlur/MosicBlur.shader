@@ -2,7 +2,7 @@ Shader "Unlit/MosaicBlur"
 {
 	Properties
 	{
-		_MainTex("Texture", 2D) = "white" {}
+		[HideInInspector] _MainTex("Texture", 2D) = "white" {}
 		[IntRange]_BlurRadius("BlurRadius",Range(0,100)) = 5
 		[Toggle] _UseMosaic("Mosaic", Float) = 1
 	}

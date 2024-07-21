@@ -2,7 +2,7 @@ Shader "Unlit/Ascii ArtCS"
 {
 	Properties
 	{
-		_MainTex("MainTex", 2D) = "" {}
+		[HideInInspector] _MainTex("MainTex", 2D) = "" {}
 		_Color("Color", Color) = (1, 1, 1, 1)
 		_Font_Color("Font Color", Color) = (1, 0, 0, 1)
 		_Alpha("Alpha Blending", Range(0,1.0)) = 1.0

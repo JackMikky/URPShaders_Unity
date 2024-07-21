@@ -2,7 +2,7 @@ Shader "Unlit/illusionEffectCS"
 {
 	Properties
 	{
-		_MainTex("Texture", 2D) = "white" {}
+		[HideInInspector]_MainTex("Texture", 2D) = "white" {}
         _Speed("Move Speed",Range(0.1,10))=1
         _Distance("illusion Move Distance",Range(0,1))=0.1
         [Toggle]_UseFish_Eye_Lens("Fish-eye lens",FLOAT)=1
