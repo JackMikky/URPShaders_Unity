@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class NoiseGenerater : MonoBehaviour
+public class NoiseGenerator : MonoBehaviour
 {
     [System.Serializable]
     public class NoiseProps
