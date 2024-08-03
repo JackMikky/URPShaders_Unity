@@ -718,7 +718,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &992426488
 Transform:
   m_ObjectHideFlags: 0
@@ -757,7 +757,7 @@ MonoBehaviour:
     minTime: 0
     maxTime: 0.15
     ShaderPropertyReference: _UseGlassNoise
-    Probability: 25
+    Probability: 56.7
     intervalTime: 8
   - NoiseName: LineNoise
     minTime: 0
