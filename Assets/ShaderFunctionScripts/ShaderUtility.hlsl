@@ -16,7 +16,6 @@ void TilingAndOffset(float2 UV, float2 Tiling, float2 Offset, out float2 Out)
 {
     Out = UV * Tiling + Offset;
 }
-
 float character(int n, float2 p, int secondaryEffect=0)
 {
     p = floor(p * float2(-4.0, 4.0) + 2.5);
@@ -35,5 +34,56 @@ float character(int n, float2 p, int secondaryEffect=0)
         return 1.0;
     else
         return 0.0;
+}
+
+float hexDist(float2 a, float2 b,float degree){
+    float2 p = abs(b-a);
+    float s = sin(degree);
+    float c = cos(degree);
+    
+    float diagDist = s*p.x + c*p.y;
+    return max(diagDist, p.x)/c;
+}
+
+float2 nearestHex(float s, float2 st,float degree){
+    float h = sin(degree)*s;
+    float r = cos(degree)*s;
+    float b = s + 2.0*h;
+    float a = 2.0*r;
+    float m = h/r;
+
+    float2 sect = st/float2(2.0*r, h+s);
+    float2 sectPxl = fmod(st, float2(2.0*r, h+s));
+    
+    float aSection = fmod(floor(sect.y), 2.0);
+    
+    float2 coord = floor(sect);
+    if(aSection > 0.0){
+        if(sectPxl.y < (h-sectPxl.x*m)){
+            coord -= 1.0;
+        }
+        else if(sectPxl.y < (-h + sectPxl.x*m)){
+            coord.y -= 1.0;
+        }
+
+    }
+    else{
+        if(sectPxl.x > r){
+            if(sectPxl.y < (2.0*h - sectPxl.x * m)){
+                coord.y -= 1.0;
+            }
+        }
+        else{
+            if(sectPxl.y < (sectPxl.x*m)){
+                coord.y -= 1.0;
+            }
+            else{
+                coord.x -= 1.0;
+            }
+        }
+    }
+    
+    float xoff = fmod(coord.y, 2.0)*r;
+    return float2(coord.x*2.0*r-xoff, coord.y*(h+s))+float2(r*2.0, s);
 }
 #endif
