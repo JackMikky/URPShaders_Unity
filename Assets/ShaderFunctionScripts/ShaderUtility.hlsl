@@ -87,7 +87,7 @@ float2 nearestHex(float s, float2 st,float degree){
     return float2(coord.x*2.0*r-xoff, coord.y*(h+s))+float2(r*2.0, s);
 }
 
-float pattern(float angle,float2 Size,float2 center,float2 uv) {
+float Dot_pattern(float angle,float2 Size,float2 center,float2 uv) {
     float s = sin( angle );
     float c = cos( angle );
     float2 tex = uv * Size - center;

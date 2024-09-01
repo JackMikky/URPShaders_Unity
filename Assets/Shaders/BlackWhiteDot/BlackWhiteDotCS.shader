@@ -67,7 +67,7 @@ Shader "Unlit/BlackWhiteDotCS"
 
                     float aCol = (col.r + col.g +col.b ) / 3; 
 
-                    float vc = aCol * _Color2 - _Color1 + pattern(_Angle,size,center,cuv);
+                    float vc = aCol * _Color2 - _Color1 + Dot_pattern(_Angle,size,center,cuv);
 
                     float3 newColor3 = float3(vc,vc,vc);
 
