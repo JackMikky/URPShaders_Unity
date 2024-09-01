@@ -86,4 +86,23 @@ float2 nearestHex(float s, float2 st,float degree){
     float xoff = fmod(coord.y, 2.0)*r;
     return float2(coord.x*2.0*r-xoff, coord.y*(h+s))+float2(r*2.0, s);
 }
+
+float pattern(float angle,float2 Size,float2 center,float2 uv) {
+    float s = sin( angle );
+    float c = cos( angle );
+    float2 tex = uv * Size - center;
+    float2 points = float2( c * tex.x - s * tex.y, s * tex.x + c * tex.y );
+    return ( sin( points.x ) * sin( points.y ) ) * 4.0;
+}
+
+float screenRatio(float4 ScreenParams){
+    float screenRat;
+    if(ScreenParams.x > ScreenParams.y){
+    screenRat = ScreenParams.x / ScreenParams.y;
+    }else{
+    screenRat = ScreenParams.y / ScreenParams.x;
+    }
+    return screenRat;
+}
+
 #endif
