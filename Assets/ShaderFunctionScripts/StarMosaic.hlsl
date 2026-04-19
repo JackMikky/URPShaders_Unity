@@ -1,9 +1,9 @@
-#ifndef STARTMOSAIC_INCLUDE
-#define STARTMOSAIC_INCLUDE
+#ifndef StarMOSAIC_INCLUDE
+#define StarMOSAIC_INCLUDE
 
 #define pi 3.1415926535
 
-float inStart(float2 uv,float outSideR,float inSideR,float size,float rotate){
+float inStar(float2 uv,float outSideR,float inSideR,float size,float rotate){
     float a = atan2(uv.y, uv.x);
     float r = length(uv);
 
@@ -18,11 +18,11 @@ float inStart(float2 uv,float outSideR,float inSideR,float size,float rotate){
     return d;
 }
 
-void inStart_float(float2 uv,float outSideR,float inSideR,float size,float rotate,out float result){    
-    result = inStart(uv, outSideR, inSideR, size, rotate);
+void inStar_float(float2 uv,float outSideR,float inSideR,float size,float rotate,out float result){    
+    result = inStar(uv, outSideR, inSideR, size, rotate);
 }
 
-float4 startMosaic(float2 uv0,float2 iResolution,float2 offset,TEXTURE2D_PARAM( mainTex, mainTexSampler), float outSideR, float inSideR, float size, float density, float rotate){ 
+float4 starMosaic(float2 uv0,float2 iResolution,float2 offset,TEXTURE2D_PARAM( mainTex, mainTexSampler), float outSideR, float inSideR, float size, float density, float rotate){ 
     float2 aspect = float2(iResolution.x / iResolution.y, 1.0);
     
     float2 mosaicUV = floor(uv0 * density * aspect) / (density * aspect);
@@ -33,7 +33,7 @@ float4 startMosaic(float2 uv0,float2 iResolution,float2 offset,TEXTURE2D_PARAM( 
     
     float2 localUV = frac(uv0 * density * aspect) - 0.5 + offset;
     
-    float d = inStart(localUV, outSideR, inSideR, size, rotate);
+    float d = inStar(localUV, outSideR, inSideR, size, rotate);
     
     float4 background = SAMPLE_TEXTURE2D(mainTex, mainTexSampler, uv0);
     
@@ -48,7 +48,7 @@ float4 startMosaic(float2 uv0,float2 iResolution,float2 offset,TEXTURE2D_PARAM( 
     //return float4(mask, mask, mask, 1.0);
 }
 
-void startMosaic_float(
+void starMosaic_float(
     float2 UV, 
     float2 resolution, 
     float2 offset,
@@ -61,7 +61,7 @@ void startMosaic_float(
     float rotate,
     out float4 result)
 {
-    result = startMosaic(
+    result = starMosaic(
         UV, 
         resolution, 
         offset,
@@ -74,4 +74,4 @@ void startMosaic_float(
         rotate
     );
 }
-#endif // STARTMOSAIC_INCLUDE
+#endif // StarMOSAIC_INCLUDE
